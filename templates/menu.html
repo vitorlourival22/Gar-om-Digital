@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body>
+    <h1>Menu</h1>
+<a href="{% url 'add_item'%}">add item</a>
+<a href="{% url 'home'%}"></a>
+<table border="4">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+    </tr>
+    {% for item in items %}
+    <td>{{ item.name}}</td>
+    <td>{{ item.description}}</td>
+    <td>{{ item.price}}</td>
+    <td>{{ item.Category}}</td>
+    </td>
+    </tr>
+</table>
+</html>
