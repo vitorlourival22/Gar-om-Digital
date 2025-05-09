@@ -1,0 +1,10 @@
+<h2>Produtos</h2>
+<ul>
+  {% for item in itens %}
+    <li>
+      {{ item.name }} - R$ {{ item.price }}
+      <a href="{% url 'add_cart' item.id %}">Adicionar ao carrinho</a>
+    </li>
+  {% endfor %}
+</ul>
+<a href="{% url 'view_cart' %}">Ver carrinho</a>
