@@ -1,33 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-</head>
-<body>
-    <h1>item_menu</h1>
-    <a href="{% url 'add_item'%}">add item</a>
-    <a href="{%url 'home'%}">voltar</a>
-    <table border="4">
-        <tr>
-            <th>Produto</th>
-            <th>Descrição</th>
-            <th>Preço</th>
-            <th>Categoria</th>
-        </tr>
-        {%for item in items%}
-        <tr>
-            <th>{{ item.name}}</th>
-            <th>{{item.description}}</th>
-            <th>{{item.price}}R$</th>
-            <th>{{item.category}}</th>
-        </tr>
-        <th><button type="submit">Adicionar</button></th>
-        {% endfor%}
-        
-    </table>
-    
-</body>
-</html>
+<table border="4">
+    <tr>
+        <th>Produto</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Categoria</th>
+        <th>Quantidade</th>
+        <th>Adicionar ao Carrinho</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.price }} R$</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>
+            <form method="post" action="{% url 'add_cart' item.id %}">
+                {% csrf_token %}
+                <button type="submit">Adicionar</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

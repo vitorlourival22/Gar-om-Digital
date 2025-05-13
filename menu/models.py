@@ -10,7 +10,6 @@ class Category(models.Model):
 class Item(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
     price = models.FloatField()
     quantity = models.IntegerField(default=0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -50,3 +49,6 @@ class StockMovement(models.Model):
 
     def __str__(self):
         return f"{self.get_movement_type_display()} - {self.item.name} ({self.quantity})"
+    
+    class Cart(models.Model):
+        product = models.ForeignKey(Item,on_delete=models.CASCADE)

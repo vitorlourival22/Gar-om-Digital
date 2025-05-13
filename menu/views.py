@@ -52,20 +52,26 @@ def stock_movement(request):
         form = StockMovementForm()
     return render(request, 'inventory/stock_movement.html', {'form': form})
 
-def Add_cart(request,item_id):
-    item = get_object_or_404(Item,id=item_id)
-    cart = request.session.get('cart',{})
+def Add_cart(request, item_id):
+    item = get_object_or_404(Item, id=item_id)
+    cart = request.session.get('cart', {})
 
     item_id_str = str(item.id)
+
     if item_id_str not in cart:
-        cart[item_id_str] = {'nome': item.name, 'quantity': 1,'price': str(item.price)}
+        cart[item_id_str] = {
+            'nome': item.name,
+            'quantity': 1,
+            'price': str(item.price)
+        }
     else:
         cart[item_id_str]['quantity'] += 1
 
-        request.session["cart"] = cart
-        request.session.modified = True
-        return redirect('View_cart')
-    
+    request.session["cart"] = cart
+    request.session.modified = True
+    return redirect('view_cart')
+
+
 def remove_cart(request, item_id):
     cart = request.session.get('cart', {})
     item_id_str = str(item_id)
@@ -77,7 +83,9 @@ def remove_cart(request, item_id):
 
     return redirect('view_cart')
 
+
 def view_cart(request):
     cart = request.session.get('cart', {})
     total = sum(float(item['price']) * item['quantity'] for item in cart.values())
+
     return render(request, 'cart.html', {'cart': cart, 'total': total})

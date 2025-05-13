@@ -14,4 +14,4 @@ class StockMovementForm(forms.ModelForm):
 class ItemForm(forms.ModelForm):
     class Meta:
         model = Item
-        fields = ['name', 'description', 'price', 'category']  # Added category field
+        fields = ['name', 'price', 'category']

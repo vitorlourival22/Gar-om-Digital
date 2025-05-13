@@ -2,9 +2,9 @@
 
 {% if cart %}
   <ul>
-    {% for id, item in carrinho.items %}
+    {% for id, item in cart.items %}
       <li>
-        {{ item.name }} - {{ item.quantity }} x R$ {{ item.price }}
+        {{ item.nome }} - {{ item.quantity }} x R$ {{ item.price }}
         <a href="{% url 'remove_cart' id %}">Remover</a>
       </li>
     {% endfor %}
@@ -14,4 +14,4 @@
   <p>Seu carrinho está vazio.</p>
 {% endif %}
 
-<a href="{% url 'item_list' %}">Voltar aos produtos</a>
+<a href="{% url 'item_menu' %}">Voltar aos produtos</a>

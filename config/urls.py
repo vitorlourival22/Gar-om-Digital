@@ -15,6 +15,6 @@ urlpatterns = [
     path('item_menu/', item_menu, name='item_menu'),
     path('add_category/', add_category, name='add_category'),  # Corrected to use a string for the name
     path('cart/',view_cart, name='view_cart'),
-    path('cart/add/<int:item_id>/', Add_cart, name='add_cart'),
+    path('cart/add/<int:item_id>/',Add_cart, name='add_cart'),
     path('cart/remove/<int:item_id>/',remove_cart, name='remove_cart'),
 ]
