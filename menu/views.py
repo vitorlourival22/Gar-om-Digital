@@ -41,9 +41,6 @@ def add_item(request):
         form = ItemForm()  # Create a new form instance for GET requests
         return render(request, 'add_item.html', {'form': form})  # Pass categories to the template
 
-
-
-
 def stock_movement(request):
     if request.method == 'POST':
             form.save()

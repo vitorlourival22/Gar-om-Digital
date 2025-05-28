@@ -1,19 +1,16 @@
+<h1>Menu</h1>
 <table border="4">
     <tr>
         <th>Produto</th>
-        <th>Descrição</th>
         <th>Preço</th>
         <th>Categoria</th>
-        <th>Quantidade</th>
         <th>Adicionar ao Carrinho</th>
     </tr>
     {% for item in items %}
     <tr>
         <td>{{ item.name }}</td>
-        <td>{{ item.description }}</td>
         <td>{{ item.price }} R$</td>
         <td>{{ item.category }}</td>
-        <td>{{ item.quantity }}</td>
         <td>
             <form method="post" action="{% url 'add_cart' item.id %}">
                 {% csrf_token %}
