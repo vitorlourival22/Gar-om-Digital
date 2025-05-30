@@ -1,24 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <title>Home</title>
 </head>
-<header>
-    <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'item_menu' %}">Menu</a></li>
-            <li><a href="{% url 'add_item' %}">Adicionar Produto</a></li>
-            <li><a href="{% url 'add_category' %}">Adicionar Categoria</a></li>
-        </ul>
-    </nav>
-</header>
 <body>
-    <h1>Home</h1>
-    <a href="{% url 'item_menu'%}">Menu</a>
-    <a href="{% url 'add_item' %}">Adicionar Produto</a>
-    <a href="{% url 'add_category'%}">adicionar categoria</a>
+    <h1>Administração</h1>
+    <div class="links">
+        <a href="{% url 'item_menu'%}">Menu</a>
+        <a href="{% url 'view_cart' %}">Carrinho</a>
+        <a href="{% url 'add_item' %}">Adicionar Produto</a>
+        <a href="{% url 'add_category'%}">Adicionar Categoria</a>
+    </div>
 </body>
 </html>

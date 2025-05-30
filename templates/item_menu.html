@@ -1,5 +1,11 @@
+{% load static %}
+<head>
+   <link rel="stylesheet" href="{% static 'css/item_menu.css' %}">
+</head>
 <h1>Menu</h1>
-<table border="4">
+<body>
+    <a href="{% url 'home' % }">Home</a>
+    <table border="4">
     <tr>
         <th>Produto</th>
         <th>Preço</th>
@@ -20,3 +26,5 @@
     </tr>
     {% endfor %}
 </table>
+
+</body>

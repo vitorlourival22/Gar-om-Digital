@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Add New Item</h1>
-    <a href="{% url 'item_menu' %}">Back</a>
+    <a href="{% url 'home' %}">Back</a>
 
     <form method="post" action="{% url 'add_item' %}">
         {% csrf_token %}

@@ -1,3 +1,6 @@
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/cart.css' %}">
 <h2>Seu Carrinho</h2>
 
 {% if cart %}
@@ -5,6 +8,7 @@
     {% for id, item in cart.items %}
       <li>
         {{ item.nome }} - {{ item.quantity }} x R$ {{ item.price }}
+        <button></button>
         <a href="{% url 'remove_cart' id %}">Remover</a>
       </li>
     {% endfor %}
