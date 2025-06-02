@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.urls import path
 
 from menu.views import item_list, stock_movement, add_item, home, menu, item_menu, add_category,Add_cart,view_cart,remove_cart
+from orders.views import create_qr_code, show_table
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -17,4 +18,6 @@ urlpatterns = [
     path('cart/',view_cart, name='view_cart'),
     path('cart/add/<int:item_id>/', Add_cart, name='add_cart'),
     path('cart/remove/<int:item_id>/',remove_cart, name='remove_cart'),
+    path('create_qr_code/<int:table_id>/', create_qr_code, name='create_qr_code'),
+    path('show_table/<int:table_id>/', show_table, name='show_tables'),
 ]
