@@ -1,14 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/add_item.css' %}">
+    
     <title>Add Item</title>
 </head>
 <body>
     <h1>Add New Item</h1>
-    <a href="{% url 'home' %}">Back</a>
-
+    <a href="{% url 'home' %}" class="button">Back</a>     
     <form method="post" action="{% url 'add_item' %}">
         {% csrf_token %}
   

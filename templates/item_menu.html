@@ -4,13 +4,13 @@
 </head>
 <h1>Menu</h1>
 <body>
-    <a href="{% url 'home' % }">Home</a>
     <table border="4">
     <tr>
         <th>Produto</th>
         <th>Preço</th>
         <th>Categoria</th>
         <th>Adicionar ao Carrinho</th>
+        <th></th>
     </tr>
     {% for item in items %}
     <tr>

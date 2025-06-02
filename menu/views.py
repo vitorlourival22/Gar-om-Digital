@@ -74,7 +74,10 @@ def remove_cart(request, item_id):
     item_id_str = str(item_id)
 
     if item_id_str in cart:
-        del cart[item_id_str]
+        if cart[item_id_str]['quantity'] > 1:
+            cart[item_id_str]['quantity'] -= 1
+        else:
+            del cart[item_id_str]
         request.session['cart'] = cart
         request.session.modified = True
 

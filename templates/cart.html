@@ -8,8 +8,8 @@
     {% for id, item in cart.items %}
       <li>
         {{ item.nome }} - {{ item.quantity }} x R$ {{ item.price }}
-        <button></button>
-        <a href="{% url 'remove_cart' id %}">Remover</a>
+         <a href="{% url 'remove_cart' id %}" class="button">Remover</a>
+       
       </li>
     {% endfor %}
   </ul>
