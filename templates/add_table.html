@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Mesa</title>
+</head>
+<body>
+    <h1>Adicionar Mesa</h1>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Isso já mostra os erros ao lado de cada campo -->
+    <button type="submit">Salvar</button>
+</form>
+
+</body>
+</html>

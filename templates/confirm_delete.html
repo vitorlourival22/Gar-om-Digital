@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Excluir Mesa</title>
+</head>
+<body>
+    <h1>Excluir Mesa {{ table.number }}</h1>
+    <p>Tem certeza que deseja excluir esta mesa?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sim, excluir</button>
+        <a href="{% url 'list_tables' %}">Cancelar</a>
+    </form>
+</body>
+</html>

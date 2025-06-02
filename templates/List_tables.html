@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Mesas</title>
+</head>
+<body>
+    <h1>Mesas Cadastradas</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Número</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for table in tables %}
+                <tr>
+                    <td>{{ table.number }}</td>
+                    <td>{{ table.status}}</td>
+                     <td>
+                    <a href="{% url 'delete_table' table.id %}">Excluir</a>
+                </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">Nenhuma mesa cadastrada.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'add_table' %}">Adicionar Nova Mesa</a>
+</body>
+</html>

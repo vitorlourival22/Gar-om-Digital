@@ -3,7 +3,7 @@ from menu.models import Item
 
 class Table(models.Model):
     id = models.AutoField(primary_key=True)
-    number = models.IntegerField()
+    number = models.PositiveIntegerField(unique=True) 
     status = models.BooleanField(default=False)
 
     class Meta:
