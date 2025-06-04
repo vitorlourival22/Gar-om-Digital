@@ -6,6 +6,8 @@ class Table(models.Model):
     number = models.PositiveIntegerField(unique=True) 
     status = models.BooleanField(default=False)
 
+    qr_code_image = models.ImageField(upload_to='qr_codes/', blank=True, null=True)
+
     class Meta:
         db_table = 'tables'
 
