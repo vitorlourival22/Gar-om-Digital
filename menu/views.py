@@ -4,7 +4,9 @@ from .forms import StockMovementForm,ItemForm,CategoryForm
 
 def home(request):
     return render(request, 'home.html')
-
+def cardapio_gestor(request):
+    items = Item.objects.all()
+    return render(request, 'CardapioGestor.html', {'items': items})
 def menu(request):
     items = Item.objects.all()
     return render(request, 'menu.html', {'items': items})
@@ -89,3 +91,4 @@ def view_cart(request):
     total = sum(float(item['price']) * item['quantity'] for item in cart.values())
 
     return render(request, 'cart.html', {'cart': cart, 'total': total})
+

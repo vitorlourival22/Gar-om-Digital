@@ -2,9 +2,8 @@
 
 from django.contrib import admin
 from django.urls import path
-
-from menu.views import item_list, stock_movement, add_item, home, menu, item_menu, add_category,Add_cart,view_cart,remove_cart
-from orders.views import create_qr_code, show_table,add_table,list_tables,delete_table
+from menu.views import item_list, stock_movement, add_item, home, menu, item_menu, add_category,Add_cart,view_cart,remove_cart,cardapio_gestor
+from orders.views import create_qr_code, show_table,add_table,list_tables,delete_table,garcom,status
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +22,7 @@ urlpatterns = [
     path('add_table/', add_table, name='add_table'),
     path('list-tables/', list_tables, name='list_tables'),
     path('delete-table/<int:table_id>/', delete_table, name='delete_table'),
+    path('garcom/', garcom, name='garcom'),
+    path('cardapio_gestor/', cardapio_gestor, name='cardapio_gestor'),
+    path('status/', status, name='status'),
 ]

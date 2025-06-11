@@ -7,7 +7,7 @@
 </head>
 <body>
     <form method="post">
-        <button type="button"><a href="{% url 'home'%}">voltar</a></button>
+        <button type="button"><a href="{% url 'cardapio_gestor'%}">voltar</a></button>
         {% csrf_token %}
         {{form.as_p}}
         <button type="submit">salvar</button>

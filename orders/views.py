@@ -7,6 +7,12 @@ from .models import Table
 from .forms import TableForm
 from django.core.files import File
 
+def garcom(request):
+    return render(request, 'garcom.html')
+
+def status(request):
+    return render(request, 'Preparo.html')
+
 def create_qr_code(request, table_id):
     table = Table.objects.get(id=table_id)
     url = f'http://127.0.0.1:8000/table/{table.id}'
