@@ -12,4 +12,4 @@ class ItemAdmin(admin.ModelAdmin):
 @admin.register(StockMovement)
 class StockMovementAdmin(admin.ModelAdmin):
     list_display = ('item', 'movement_type', 'quantity', 'date')
-    list_filter = ('movement_type', 'date')
+    #list_filter = ('movement_type', 'date')
